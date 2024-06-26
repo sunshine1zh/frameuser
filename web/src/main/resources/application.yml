@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: local
+  application:
+    name: frame-2.5.3
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:9527
+#
+#application:
+#  version: @project.version@
+#  build: '@build.time@'
+#
+#logging:
+#  file:
+#    name: ${spring.application.name}
+#    path: /data/logback/${spring.application.name}/${server.port}
+#
+#custom:
+#  oss:
+#    endpoint: https://oss-cn-beijing.aliyuncs.com
