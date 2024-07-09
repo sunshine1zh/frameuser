@@ -6,13 +6,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.logging.Logger;
 
-/*
+/**
  * Get the configuration.
  * 获取配置.
  *
  * @author: zhangtopsun@foxmail.com
  * @date: 2022/11/16 14:02
  * @version: 1.0
+ */
+
+/**
+ *
  */
 @ConfigurationProperties(prefix = CustomConfig.CONFIG_PREFIX)
 @Component
