@@ -1,9 +1,4 @@
-spring:
-  application:
-    name: web
-  datasource:
-    master:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: ${dataurl}
-      username: ${username}
-      password: ${password}
+custom:
+  config:
+    username: zhang
+    password: 123456

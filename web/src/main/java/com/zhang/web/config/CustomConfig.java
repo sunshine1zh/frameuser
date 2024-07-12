@@ -1,10 +1,8 @@
 package com.zhang.web.config;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Logger;
 
 /**
  * Get the configuration.
@@ -23,4 +21,23 @@ import java.util.logging.Logger;
 public class CustomConfig {
   public static final String CONFIG_PREFIX = "custom.config";
 
+  private String username;
+  
+  private String password;
+  
+  public String getUsername() {
+    return username;
+  }
+  
+  public void setUsername(final String username) {
+    this.username = username;
+  }
+  
+  public String getPassword() {
+    return password;
+  }
+  
+  public void setPassword(final String password) {
+    this.password = password;
+  }
 }
