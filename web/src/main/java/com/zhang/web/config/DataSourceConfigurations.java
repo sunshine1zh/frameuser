@@ -1,10 +1,8 @@
 package com.zhang.web.config;
 
-import com.kwynt.common.TimeStampToLocalDateConverter;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,8 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -42,7 +38,7 @@ public class DataSourceConfigurations {
    */
   @Bean("dataSource")
   public DataSource getHikariDataSource(final HikariDataSourceConfig hikariDataSourceProperties) {
-    HikariDataSource hikariDataSource = new Hik();
+    HikariDataSource hikariDataSource = new HikariDataSource();
     hikariDataSource.setJdbcUrl(hikariDataSourceProperties.getUrl());
     hikariDataSource.setUsername(hikariDataSourceProperties.getUsername());
     hikariDataSource.setPassword(hikariDataSourceProperties.getPassword());
@@ -71,12 +67,12 @@ public class DataSourceConfigurations {
     return hikariDataSource;
   }
 
-  @Primary
-  @Bean(name = "transactionManager")
-  public DataSourceTransactionManager transactionManager(
-      final @Qualifier("dataSource") DataSource dataSource) {
-    return new DataSourceTransactionManager(dataSource);
-  }
+//  @Primary
+//  @Bean(name = "transactionManager")
+//  public DataSourceTransactionManager transactionManager(
+//      final @Qualifier("dataSource") DataSource dataSource) {
+//    return new DataSourceTransactionManager(dataSource);
+//  }
 
   /*
    * sqlSessionFactory.
@@ -91,8 +87,8 @@ public class DataSourceConfigurations {
       throws Exception {
     SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
     factoryBean.setDataSource(dataSource);
-    TypeHandler[] typeHandlers = new TypeHandler[] {new TimeStampToLocalDateConverter()};
-    factoryBean.setTypeHandlers(typeHandlers);
+//    TypeHandler[] typeHandlers = new TypeHandler[] {new TimeStampToLocalDateConverter()};
+//    factoryBean.setTypeHandlers(typeHandlers);
     String path = "classpath*:mapper/master/*.xml";
     factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(path));
     org.apache.ibatis.session.Configuration configuration =

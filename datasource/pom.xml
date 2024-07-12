@@ -7,16 +7,24 @@
         <groupId>com.zhang</groupId>
         <artifactId>frameinit</artifactId>
         <version>0.1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-
+    <groupId>com.zhang</groupId>
     <artifactId>datasource</artifactId>
-
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <version>0.1.0</version>
+    <name>datasource</name>
+    <description>init project for zhang</description>
+    <packaging>jar</packaging>
     <dependencies>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

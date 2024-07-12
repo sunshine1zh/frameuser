@@ -6,17 +6,19 @@
         <groupId>com.zhang</groupId>
         <artifactId>frameinit</artifactId>
         <version>0.1.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zhang</groupId>
     <artifactId>web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <name>web</name>
     <description>init project for zhang</description>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.zhang</groupId>
             <artifactId>datasource</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,6 +51,15 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -56,6 +67,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.0</version>
             </plugin>
         </plugins>
     </build>
