@@ -3,6 +3,8 @@ package com.zhang.web.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 /*
  * Database parameters.
@@ -17,7 +19,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 public class HikariDataSourceConfig {
 
-  public static final String HIKARI_DATASOURCE_PREFIX = "spring.datasource.master";
+  public static final String HIKARI_DATASOURCE_PREFIX = "custom.datasource.mysql";
 
   private String url;
 

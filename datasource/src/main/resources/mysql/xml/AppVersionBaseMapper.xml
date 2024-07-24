@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.datasource.mysql.mapper.AppVersionMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhang.datasource.mysql.model.AppVersionDO">
+        <id column = "id" property = "id" jdbcType="INTEGER" javaType="Integer"/>
+        <result column = "version" property = "version" jdbcType="VARCHAR" javaType="String" />
+        <result column = "app_type" property = "appType" jdbcType="TINYINT" javaType="Integer" />
+        <result column = "force_or_no" property = "forceOrNo" jdbcType="TINYINT" javaType="Integer" />
+        <result column = "create_time" property = "createTime" jdbcType="TIMESTAMP" javaType="java.time.LocalDateTime" />
+        <result column = "deleted" property = "deleted" jdbcType="TINYINT" javaType="Integer" />
+    </resultMap>
+        <sql id="Base_Column_List">
+            id, version, app_type, force_or_no, create_time, deleted
+        </sql>
+
+    <insert id="insert" parameterType="com.zhang.datasource.mysql.model.AppVersionDO" >
+        insert into kwynt_app_version
+                    (id, version, app_type, force_or_no, create_time, deleted)
+                values (                    #{id},
+                    #{version},
+                    #{appType},
+                    #{forceOrNo},
+                    #{createTime},
+                    #{deleted}
+
+                )
+    </insert>
+    <update id="updateSelectiveById" parameterType="com.zhang.datasource.mysql.model.AppVersionDO" >
+        update kwynt_app_version
+        <set>
+            <if test="version != null">
+                version = #{version},
+            </if>
+            <if test="appType != null">
+                app_type = #{appType},
+            </if>
+            <if test="forceOrNo != null">
+                force_or_no = #{forceOrNo},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="deleted != null">
+                deleted = #{deleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="deleteById">
+        UPDATE kwynt_app_version set deleted = 1 WHERE id = #{id}
+    </delete>
+    <select id="getById" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" /> from kwynt_app_version where id = #{id} and deleted = 0
+    </select>
+
+</mapper>
