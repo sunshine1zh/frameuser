@@ -2,3 +2,9 @@ custom:
   config:
     username: zhang
     password: 123456
+  datasource:
+    mysql:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: zhang
+      password: dwerwi&43R
+      url: jdbc:mysql://192.168.56.111:3306/zhang?useUnicode=true&characterEncoding=UTF-8&nullCatalogMeansCurrent=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
