@@ -26,6 +26,7 @@
         <hikariCP.version>4.0.3</hikariCP.version>
         <mybatis.version>3.5.6</mybatis.version>
         <jdbc.version>5.3.9</jdbc.version>
+        <json.version>2.0.52</json.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -78,6 +79,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${jdbc.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${json.version}</version>
             </dependency>
 
 

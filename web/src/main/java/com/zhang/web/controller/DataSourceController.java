@@ -26,6 +26,5 @@ public class DataSourceController {
     public void getYml() {
         System.out.println(customConfig.getUsername());
         System.out.println(appVersionMapper.getById(1).get(0).getVersion());
-        System.out.println(SpringContextUtils.getEnvironment());
     }
 }

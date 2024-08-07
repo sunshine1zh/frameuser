@@ -7,14 +7,14 @@ import java.net.UnknownHostException;
 import java.util.Enumeration;
 import java.util.regex.Pattern;
 
-/*
+/**
  * .
  *
  * @author: <a href="mailto:zhangtopsun@foxmail.com">zhanghq</a>
  * @date: 2022/11/15 15:10
  * @version: 1.0
  */
-public class IpUtils {
+public class IpUtil {
 
   /*
    * Regular expression of the IP address.
