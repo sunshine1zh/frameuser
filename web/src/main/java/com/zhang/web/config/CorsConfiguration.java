@@ -24,7 +24,7 @@ public class CorsConfiguration {
     // The domain name of the client that is allowed to access
     // 允许访问的客户端域名
     List<String> allowedOriginPatterns = new ArrayList<>();
-    allowedOriginPatterns.add("*.kwynt.chintec.net");
+    allowedOriginPatterns.add("*.chintec.net");
     allowedOriginPatterns.add("*.kwynt.com");
     corsConfiguration.setAllowedOriginPatterns(allowedOriginPatterns);
     //        corsConfiguration.addAllowedOrigin("*"); // Any domain name is allowed 允许任何域名使用
