@@ -8,17 +8,6 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-custom:
-  config:
-    username: zhang
-    password: 123456
-  datasource:
-    mysql:
-      driverClassName: ${driverClassName}
-      username: ${username}
-      password: ${password}
-      url: ${url}
-      connectionTestQuery:
 #  boot:
 #    admin:
 #      client:

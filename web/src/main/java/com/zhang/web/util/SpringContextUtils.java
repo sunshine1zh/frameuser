@@ -1,4 +1,4 @@
-package com.zhang.web.controller;
+package com.zhang.web.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
