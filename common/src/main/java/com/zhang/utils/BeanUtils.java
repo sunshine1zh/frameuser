@@ -21,6 +21,7 @@ public class BeanUtils {
      * @param target target
      */
     public static void copy(final Object origin, final Object target) {
+        System.out.println("test");
 //        AssertHelper.notNull(origin, "origin.is.null");
 //        AssertHelper.notNull(target, "target.is.null");
 //        List<PropertyDescriptor> targetPds =
