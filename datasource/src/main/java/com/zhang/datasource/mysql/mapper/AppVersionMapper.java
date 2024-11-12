@@ -17,5 +17,5 @@ public interface AppVersionMapper{
    * @param id
    * @return
    */
-  List<AppVersionDO> getById(Integer id);
+  AppVersionDO getById(Integer id);
 }

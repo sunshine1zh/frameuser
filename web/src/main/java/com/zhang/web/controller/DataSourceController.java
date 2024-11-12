@@ -1,6 +1,7 @@
 package com.zhang.web.controller;
 
 import com.zhang.datasource.mysql.mapper.AppVersionMapper;
+import com.zhang.datasource.mysql.model.AppVersionDO;
 import com.zhang.web.config.CustomConfig;
 import com.zhang.web.util.MessageUtils;
 import org.springframework.context.MessageSource;
@@ -29,8 +30,8 @@ public class DataSourceController {
 
     @GetMapping("get/yml")
     public void getYml() {
-        System.out.println(customConfig.getUsername());
-        System.out.println(appVersionMapper.getById(1).get(0).getVersion());
-        System.out.println(messageSource.getMessage("teror",null, new Locale("en")));
+        AppVersionDO appVersionDO = appVersionMapper.getById(1);
+        System.out.println(appVersionDO.getVersion());
     }
+
 }

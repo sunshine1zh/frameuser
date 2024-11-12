@@ -4,8 +4,10 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @Author zhangtopsun@foxmail.com
@@ -17,10 +19,10 @@ public class BeanUtils {
     /*
      * object copy.
      *
-     * @param origin origin
-     * @param target target
+     * @param origin the source bean
+     * @param target the target bean
      */
-    public static void copy(final Object origin, final Object target) {
+    public static void copyProperties(final Object origin, final Object target) {
 //        AssertHelper.notNull(origin, "origin.is.null");
 //        AssertHelper.notNull(target, "target.is.null");
 //        List<PropertyDescriptor> targetPds =
@@ -50,5 +52,24 @@ public class BeanUtils {
 //            }
 //        }
     }
+
+//    private static Map<String, Field> resolveOriginFieldMap(final Class cls) {
+//        Map<String, Field> fieldMap = new HashMap<>(6);
+//        List<Field> declaredFields =
+//                ReflectionUtils.getDeclaredFields(cls).stream()
+//                        .sorted(BeanHelper::comparator)
+//                        .collect(Collectors.toList());
+//        for (Field field : declaredFields) {
+//            CopyField copyField = field.getAnnotation(CopyField.class);
+//            String fieldName = field.getName();
+//            if (copyField != null) {
+//                fieldName =
+//                        StringUtils.isNotBlank(copyField.targetField()) ? copyField.targetField() : fieldName;
+//            }
+//            field.setAccessible(true);
+//            fieldMap.put(fieldName, field);
+//        }
+//        return fieldMap;
+//    }
 
 }
