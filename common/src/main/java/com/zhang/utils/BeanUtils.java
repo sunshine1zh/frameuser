@@ -1,5 +1,7 @@
 package com.zhang.utils;
 
+import org.springframework.beans.CachedIntrospectionResults;
+
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -23,9 +25,9 @@ public class BeanUtils {
      * @param target the target bean
      */
     public static void copyProperties(final Object origin, final Object target) {
-//        AssertHelper.notNull(origin, "origin.is.null");
-//        AssertHelper.notNull(target, "target.is.null");
-//        List<PropertyDescriptor> targetPds =
+        AssertHelper.notNull(origin, "origin.is.null");
+        AssertHelper.notNull(target, "target.is.null");
+//        List<PropertyDescriptor> targetPds = CachedIntrospectionResults.forClass(clazz).getPropertyDescriptors()
 //                CachedIntrospectionHelperResults.getPropertyDescriptors(target.getClass());
 //        Map<String, Field> originFieldMap = resolveOriginFieldMap(origin.getClass());
 //        for (PropertyDescriptor propertyDescriptor : targetPds) {

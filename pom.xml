@@ -27,6 +27,7 @@
         <mybatis.version>3.5.6</mybatis.version>
         <jdbc.version>5.3.9</jdbc.version>
         <json.version>2.0.52</json.version>
+        <lombok.version>1.18.32</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -86,7 +87,11 @@
                 <artifactId>fastjson2</artifactId>
                 <version>${json.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
 
         </dependencies>
