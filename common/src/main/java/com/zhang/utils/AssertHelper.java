@@ -22,7 +22,7 @@ public class AssertHelper {
    */
   public static void isNull(final Object source, final String errorKey) {
     if (Objects.nonNull(source)) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -34,7 +34,7 @@ public class AssertHelper {
    */
   public static void isTure(final Boolean source, final String errorKey) {
     if (!source) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -46,7 +46,7 @@ public class AssertHelper {
    */
   public static void notBlank(final String source, final String errorKey) {
     if (source == null || source.isEmpty()) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -58,7 +58,7 @@ public class AssertHelper {
    */
   public static void notEmpty(final Collection<?> source, final String errorKey) {
     if (source == null || source.isEmpty()) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -70,7 +70,7 @@ public class AssertHelper {
    */
   public static void notEmpty(final Map<?, ?> source, final String errorKey) {
     if (source == null || source.isEmpty()) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -82,7 +82,7 @@ public class AssertHelper {
    */
   public static void notNull(final Object source, final String errorKey) {
     if (Objects.isNull(source)) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -94,7 +94,7 @@ public class AssertHelper {
    */
   public static void notNull(final Collection<?> source, final String errorKey) {
     if (source == null) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -106,7 +106,7 @@ public class AssertHelper {
    */
   public static void notNull(final Map<?, ?> source, final int errorKey) {
     if (source == null) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -139,7 +139,7 @@ public class AssertHelper {
     }
     if (!Objects.equals(targetSwap, sourceSwap)) {
 //      log.info("value is same or not {},{},{}", target, source, errorKey);
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -152,7 +152,7 @@ public class AssertHelper {
    */
   public static void isEquals(final Object target, final Object source, final String errorKey) {
     if (!target.equals(source)) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 
@@ -166,7 +166,7 @@ public class AssertHelper {
   public static void isSmall(
       final BigDecimal target, final BigDecimal source, final String errorKey) {
     if (source.compareTo(target) < 0) {
-      throw new RenException(errorKey);
+      throw new BaseException(errorKey);
     }
   }
 }
